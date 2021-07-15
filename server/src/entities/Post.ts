@@ -1,3 +1,4 @@
+//connecting some kind of class to graphql
 import { ObjectType, Field, Int } from "type-graphql";
 import {
   Entity,
@@ -15,6 +16,7 @@ import { Updoot } from "./Updoot";
 @ObjectType()
 @Entity()
 export class Post extends BaseEntity {
+  //format data type and the class names 
   @Field()
   @PrimaryGeneratedColumn()
   id!: number;
