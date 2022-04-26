@@ -20,7 +20,9 @@ import { createUserLoader } from "./utils/createUserLoader";
 import { createUpdootLoader } from "./utils/createUpdootLoader";
 
 const main = async () => {
-  const conn = await createConnection({
+  // const conn = await createConnection({
+   await createConnection({
+    
     type: "postgres",
     url: process.env.DATABASE_URL,
     logging: true,
@@ -30,7 +32,7 @@ const main = async () => {
   });
   // await conn.runMigrations();
 
-  // await Post.delete({});
+  //  await Post.delete({}); 
 
   const app = express();
 
