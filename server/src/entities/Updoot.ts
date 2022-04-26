@@ -7,7 +7,7 @@ import { Post } from "./Post";
 // user <-> posts
 // user -> join table <- posts
 // user -> updoot <- posts
-
+//estalish connections and relationships
 @Entity()
 export class Updoot extends BaseEntity {
   @Column({ type: "int" })
