@@ -41,6 +41,7 @@ export type Post = {
   id: Scalars['Float'];
   title: Scalars['String'];
   text: Scalars['String'];
+  imgUrl: Scalars['String'];
   points: Scalars['Float'];
   voteStatus?: Maybe<Scalars['Int']>;
   creatorId: Scalars['Float'];
@@ -120,6 +121,7 @@ export type MutationLoginArgs = {
 export type PostInput = {
   title: Scalars['String'];
   text: Scalars['String'];
+  imgUrl: Scalars['String'];
 };
 
 export type UserResponse = {

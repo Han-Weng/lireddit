@@ -25,6 +25,8 @@ class PostInput {
   title: string;
   @Field()
   text: string;
+  @Field()
+  imgUrl: string;
 }
 
 @ObjectType()
@@ -194,6 +196,7 @@ export class PostResolver {
     @Arg("id", () => Int) id: number,
     @Arg("title") title: string,
     @Arg("text") text: string,
+    
     @Ctx() { req }: MyContext
   ): Promise<Post | null> {
     const result = await getConnection()
