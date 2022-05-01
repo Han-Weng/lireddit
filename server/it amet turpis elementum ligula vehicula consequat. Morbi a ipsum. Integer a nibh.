@@ -1,0 +1,5 @@
+ id | title  |                     imgUrl                      |                         text                         | points | creatorId |         createdAt         |         updatedAt         
+----+--------+-------------------------------------------------+------------------------------------------------------+--------+-----------+---------------------------+---------------------------
+ 10 | Urbano | http://dummyimage.com/201x100.png/5fa2dd/ffffff | Sed ante. Vivamus tortor. Duis mattis egestas metus. |      0 |         1 | 2022-04-30 17:42:20.96258 | 2022-04-30 17:42:20.96258
+(1 row)
+

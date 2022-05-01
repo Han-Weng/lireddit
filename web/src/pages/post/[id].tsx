@@ -2,7 +2,7 @@ import React from "react";
 import { withUrqlClient } from "next-urql";
 import { createUrqlClient } from "../../utils/createUrqlClient";
 import { Layout } from "../../components/Layout";
-import { Heading, Box } from "@chakra-ui/core";
+import { Heading, Box, Image } from "@chakra-ui/core";
 import { useGetPostFromUrl } from "../../utils/useGetPostFromUrl";
 import { EditDeletePostButtons } from "../../components/EditDeletePostButtons";
 import { withApollo } from "../../utils/withApollo";
@@ -33,6 +33,10 @@ const Post = ({}) => {
   return (
     <Layout>
       <Heading mb={4}>{data.post.title}</Heading>
+
+      <img src={data.post.imgUrl}  ></img>
+      <Image mx="auto" src={data.post.imgUrl} mt={3} maxH={500} /> 
+      
       <Box mb={4}>{data.post.text}</Box>
       <EditDeletePostButtons
         id={data.post.id}

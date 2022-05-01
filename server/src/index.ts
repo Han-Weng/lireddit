@@ -20,8 +20,8 @@ import { createUserLoader } from "./utils/createUserLoader";
 import { createUpdootLoader } from "./utils/createUpdootLoader";
 
 const main = async () => {
-  const conn = await createConnection({
-  //  await createConnection({
+  // const conn = await createConnection({
+   await createConnection({
     
     type: "postgres",
     url: process.env.DATABASE_URL,
@@ -30,7 +30,7 @@ const main = async () => {
     migrations: [path.join(__dirname, "./migrations/*")],
     entities: [Post, User, Updoot],
   });
-  await conn.runMigrations();
+  // await conn.runMigrations();
 
   //  await Post.delete({}); 
 
