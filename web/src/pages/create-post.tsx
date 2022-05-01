@@ -25,8 +25,9 @@ const CreatePost: React.FC<{}> = ({}) => {
 
     const timestamp = Math.floor(Date.now() / 1000).toString();
     const publicId = "test";
-    const secret = process.env.NEXT_PUBLIC_CLOUDINARY_SECRET ?? "";
+    const secret = process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET ?? "";
 
+    console.log(process.env.NEXT_PUBLIC_CLOUDINARY_URL)
     const signature = await cloudinarySignature({
       publicId,
       timestamp,
@@ -35,13 +36,13 @@ const CreatePost: React.FC<{}> = ({}) => {
 
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("api_key", process.env.NEXT_PUBLIC_CLOUDINARY_KEY ?? "");
+    formData.append("api_key", process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY ?? "");
     formData.append("public_id", publicId);
     formData.append("timestamp", timestamp);
     formData.append("signature", signature);
 
     const response = await fetch(
-      "https://api.cloudinary.com/v1_1/tusharsadhwani/image/upload",
+      `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
       {
         method: "POST",
         body: formData,
